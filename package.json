@@ -1,0 +1,14 @@
+{
+  "name": "opacity-",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "akatsukijs",
+  "license": "MIT",
+  "scripts": {
+    "generate": "node utils/generator"
+  },
+  "dependencies": {
+    "install": "^0.12.2",
+    "lokijs": "^1.5.5"
+  }
+}
