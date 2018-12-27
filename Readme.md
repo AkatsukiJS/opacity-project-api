@@ -24,8 +24,32 @@ The output generated use data from tables of "Cadastro" and "Remuneração" from
 - `output/categories.json`
   - A List of categories from servidores sorted by quantity.
 
-## Next Steps
-- [ ] CRUD for the data generated
-- [ ] API for data queries
+
+## API
+
+### Install dependencies
+`yarn install`
+
+### Run :: dev mode
+`yarn api:dev`
+
+### Details
+
+| URL | Method | Reponse |
+| --  | ---    | -----  |
+| `/` |  `GET` | "hello friend" |
+| `/categories` |  `GET` | List of categories: `[{key, count}]` |
+
+### Example
+
+```shell
+curl localhost:3001/categories
+```
+
+##### Output
+```
+[{"key":"PROFESSOR DO MAGISTERIO SUPERIOR","count":1547,"meta":{"revision":0,"created":1545937444396,"version":0},"$loki":1},{"key":"ASSISTENTE EM ADMINISTRACAO","count":309,"meta":{"revision":0,"created":1545937444396,"version":0},"$loki":2},{"key":"PROFESSOR MAGISTERIO SUPERIOR-SUBSTITUTO","count":264,"meta":{"revision":0,"created":1545937444396,"version":0},"$loki":3}
+...
+```
 
 Made with :pensive: by <a href="https://github.com/akatsukijs">@akatsukijs</a>
