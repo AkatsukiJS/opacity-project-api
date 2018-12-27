@@ -45,7 +45,7 @@ filter_by_org(PATH_CADASTRO, ID_ORG, "OBJECT")
 .then( result => {
     return filter_merge_by_id(result, PATH_REMUNERACAO, "LIST")
     .then( merge => {
-        return saveToJSON(PATH_SERVERS, result)
+        return saveToJSON(PATH_SERVERS, merge)
         .then(() => {
             console.log("Done! servers.json saved.");
             return merge;

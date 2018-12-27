@@ -22,8 +22,8 @@ function getCategories(list, path_category){
     
     const keys = Object.keys(categories);
     
-    const cat_array = keys.map((key) => [key, categories[key]]).sort((a, b) => {
-        return b[1] - a[1];
+    const cat_array = keys.map((key) => ({key, count: categories[key]})).sort((a, b) => {
+        return b.count - a.count;
     })
     
     return cat_array;
