@@ -1,10 +1,10 @@
-# Opacity Project
+# Opacity Project :thinking:
 
 A example of API for data of servers from "Portal da Transparência". For didactic purposes and simplicity, we're filtering only servers of UFPI.
 
 The source of data is in: [Servidores - Portal Transparência](http://www.portaltransparencia.gov.br/download-de-dados/servidores).
 
-# Generate output data
+## Generate output data
 Testing with tables obtained in link above:
 ```javascript
 const CADASTRO_CSV = '20180131_Cadastro.csv';
@@ -24,7 +24,7 @@ The output generated use data from tables of "Cadastro" and "Remuneração" from
 - `output/categories.json`
   - A List of categories from servidores sorted by quantity.
 
-# Next Steps
+## Next Steps
 - [ ] CRUD for the data generated
 - [ ] API for data queries
 
