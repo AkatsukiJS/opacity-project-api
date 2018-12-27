@@ -5,10 +5,16 @@
   "author": "akatsukijs",
   "license": "MIT",
   "scripts": {
+    "api:dev": "node -r dotenv/config index.js",
+    "api:start": "node index.js",
     "generate": "node utils/generator"
   },
   "dependencies": {
-    "install": "^0.12.2",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
     "lokijs": "^1.5.5"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0"
   }
 }
