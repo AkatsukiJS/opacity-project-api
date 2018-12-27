@@ -48,7 +48,7 @@ curl localhost:3001/categories
 
 ##### Output
 ```
-[{"key":"PROFESSOR DO MAGISTERIO SUPERIOR","count":1547,"meta":{"revision":0,"created":1545937444396,"version":0},"$loki":1},{"key":"ASSISTENTE EM ADMINISTRACAO","count":309,"meta":{"revision":0,"created":1545937444396,"version":0},"$loki":2},{"key":"PROFESSOR MAGISTERIO SUPERIOR-SUBSTITUTO","count":264,"meta":{"revision":0,"created":1545937444396,"version":0},"$loki":3}
+[{"key":"PROFESSOR DO MAGISTERIO SUPERIOR","count":1547},{"key":"ASSISTENTE EM ADMINISTRACAO","count":309},{"key":"PROFESSOR MAGISTERIO SUPERIOR-SUBSTITUTO","count":264},{"key":"Sem informação","count":196},{"key":"TECNICO DE LABORATORIO AREA","count":111},{"key":"PROFESSOR ENS BASICO TECN TECNOLOGICO","count":95},{"key":"VIGILANTE","count":59},
 ...
 ```
 
