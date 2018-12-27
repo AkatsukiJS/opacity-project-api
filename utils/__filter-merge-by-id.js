@@ -33,8 +33,15 @@ function filter_merge_by_id(OBJECT_REGISTERS, FILE, TYPE_RETURN){
           let list_values = extract_line(line);
           let obj = {};
     
+          const to_float = [
+            "REMUNERAÇÃO BÁSICA BRUTA (R$)", 
+            "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)"
+          ];
+
           list_values.forEach((elem, i) => {
-            obj[keys[i]] = elem;
+              obj[keys[i]] = to_float.includes(keys[i])
+              ? parseFloat(elem.replace(',', '.'))
+              : elem;
           });
     
           const id_portal = obj['Id_SERVIDOR_PORTAL'];
