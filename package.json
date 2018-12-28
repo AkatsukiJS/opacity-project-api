@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "akatsukijs",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "api:dev": "node -r dotenv/config index.js",
     "api:start": "node index.js",
