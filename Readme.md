@@ -174,6 +174,10 @@ desc=true&\
 order_by=R_BRUTE" localhost:3001/category
 ```
 
+## License
 
+The source code is licensed under **MIT**. License is available [here](https://github.com/AkatsukiJS/opacity-project-api/blob/master/LICENSE)
+
+</br>
 
 Made with :stuck_out_tongue_closed_eyes: by <a href="https://github.com/akatsukijs">@akatsukijs</a>
