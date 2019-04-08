@@ -28,7 +28,7 @@ function toBeValidCategoryResponse(received, expected){
       expect.objectContaining({
         id: expect.any(String),
         cadastro: expect.any(Object),
-        remuneracao: expect.any(Object) 
+        remuneracao: expect.any(Object)
       })
     )
   })
@@ -62,7 +62,7 @@ describe('[ GET ]:: Category', () => {
       result_length_value: 5,
       sorted_by_attr_path: 'cadastro.NOME',
       ordered_by: 'ASC'
-    })    
+    })
   })
 
 

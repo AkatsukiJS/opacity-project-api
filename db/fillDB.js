@@ -6,7 +6,10 @@ function fill(dbloki){
         unique: ['Id_SERVIDOR_PORTAL'],
         indices: ['cadastro.DESCRICAO_CARGO']
     });
-    categories = dbloki.addCollection('categories');
+    categories = dbloki.addCollection('categories', {
+      unique: ['key'],
+      indices: ['key']
+    });
 
     servers.insert(data_servers);
     categories.insert(data_categories);

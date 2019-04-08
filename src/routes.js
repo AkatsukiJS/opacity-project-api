@@ -30,7 +30,21 @@ router.get('/info', async (ctx) => {
 })
 
 router.get('/category', async (ctx) => {
-  ctx.body = {}
+  try{
+    const {
+        offset,
+        limit,
+        category,
+        sort_by,
+        order_by
+    } = ctx.query
+
+    const response = db.getServers({ offset, limit, category, sort_by, order_by })
+    ctx.body = response
+  }catch(err){
+		console.error(err)
+    ctx.throw(400, 'Bad Resquest')
+  }
 });
 
 module.exports = router
