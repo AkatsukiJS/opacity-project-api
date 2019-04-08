@@ -6,7 +6,7 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "api:dev": "node -r dotenv/config index.js",
-    "api:start": "node index.js",
+    "api:start": "node src/index.js",
     "generate": "node utils/generator",
     "api:test": "jest",
     "api:test:watch": "jest --watch",

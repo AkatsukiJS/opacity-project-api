@@ -1,4 +1,4 @@
-const app = require('../app')
+const app = require('../src/app')
 const agent = require('supertest').agent(app.callback())
 
 const getValue = (obj, path) => {
