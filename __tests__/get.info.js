@@ -7,12 +7,13 @@ const API_REPO_LINK = `https://github.com/AkatsukiJS/opacity-project-api`
 const REMUNERATION_DICT_LINK = `http://www.portaltransparencia.gov.br/pagina-interna/603423-dicionario-de-dados-servidores-remuneracao`
 const REGISTER_DICT_LINK = `http://www.portaltransparencia.gov.br/pagina-interna/603422-dicionario-de-dados-servidores-cadastro`
 
-describe('[ GET ]:: Links', () => {
-  it('should be correct links', async () => {
-    const response = await agent.get('/links')
+describe('[ GET ]:: Info', () => {
+  it('should be correct info', async () => {
+    const response = await agent.get('/info')
 
-    const {      
-      links: {
+    const {
+      info: {
+        month_year_version,
         data_source,
         api_repository,
         servers_endpoint,
@@ -21,6 +22,7 @@ describe('[ GET ]:: Links', () => {
       }
     } = response.body
 
+    expect(/[0-9]{2}\-[0-9]{4}/.test(month_year_version)).toEqual(true)
     expect(data_source).toEqual(DATA_SOURCE_LINK)
     expect(api_repository).toEqual(API_REPO_LINK)
     expect(servers_endpoint).toEqual(SERVERS_ENDPOINT_LINK)
