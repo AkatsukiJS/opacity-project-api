@@ -5,7 +5,7 @@
   "author": "akatsukijs",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "api:dev": "node -r dotenv/config index.js",
+    "api:dev": "node -r dotenv/config src/index.js",
     "api:start": "node src/index.js",
     "generate": "node utils/generator",
     "api:test": "jest",
@@ -15,6 +15,7 @@
   "dependencies": {
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "lokijs": "^1.5.5"
   },
