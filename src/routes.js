@@ -3,16 +3,17 @@ const router = new KoaRouter()
 
 const loki = require('lokijs');
 const dbloki = new loki('data.db');
-const dbUtils = require('../db');
+const db = require('../db')(dbloki);
 
-dbUtils.fill(dbloki);
+db.fill();
 
 router.get('/', async (ctx) => {
   ctx.body = "Hello friend";
 });
 
 router.get('/categories', async (ctx) => {
-  ctx.body = {}
+  const results = db.getCategories()
+  ctx.body = { results }
 });
 
 router.get('/info', async (ctx) => {
