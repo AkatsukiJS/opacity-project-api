@@ -1,9 +1,9 @@
-const fill = require('./fillDB');
-const getCategories = require('./getCategories');
-const getServers = require('./getServers');
+const _fill = require('./fillDB');
+const _getCategories = require('./getCategories');
+const _getServers = require('./getServers');
 
-module.exports = {
-    getCategories,
-    fill,
-    getServers
-}
+module.exports = (dbloki) => ({
+  getCategories: () => _getCategories(dbloki),
+  fill: () => _fill(dbloki),
+  getServers: (args) => _getServers({ DB: dbloki, ...args })
+})

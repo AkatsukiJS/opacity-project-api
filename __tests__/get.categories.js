@@ -1,4 +1,4 @@
-const app = require('../app')
+const app = require('../src/app')
 const agent = require('supertest').agent(app.callback())
 
 describe('[ GET ]:: Categories', () => {
@@ -8,7 +8,7 @@ describe('[ GET ]:: Categories', () => {
     const {
       results
     } = response.body
-   
+
     results.map(el => {
       expect(el).toMatchObject(
         expect.objectContaining({

@@ -4,7 +4,7 @@ const filter_merge_by_id = require('./__filter-merge-by-id');
 const getCategories = require('./__getCategories');
 const fs = require('fs');
 
-/* 
+/*
     data:
     http://www.portaltransparencia.gov.br/download-de-dados/servidores
 */
@@ -52,7 +52,7 @@ filter_by_org(PATH_CADASTRO, ID_ORG, "OBJECT")
         });
     });
 })
-.then( (merge) => {    
+.then( (merge) => {
     const categories = getCategories(merge, ["cadastro", "DESCRICAO_CARGO"])
     saveToJSON(PATH_CATEGORIES, categories)
       .then(() => {
