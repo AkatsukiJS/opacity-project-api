@@ -10,7 +10,7 @@
     "generate": "node utils/generator",
     "api:test": "jest",
     "api:test:watch": "jest --watch",
-    "api:test:coverage": "jest --coverage"
+    "api:test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "dependencies": {
     "koa": "^2.6.2",
@@ -19,6 +19,7 @@
     "lokijs": "^1.5.5"
   },
   "devDependencies": {
+    "coveralls": "^3.0.3",
     "dotenv": "^6.2.0",
     "jest": "^24.1.0",
     "supertest": "^3.4.2"
@@ -32,6 +33,9 @@
       "!utils/**",
       "!**/coverage/**"
     ],
-    "reporters": ["default", "./utils/reporterJest.js"]
+    "reporters": [
+      "default",
+      "./utils/reporterJest.js"
+    ]
   }
 }
