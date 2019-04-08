@@ -15,6 +15,7 @@
   "dependencies": {
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.1.0",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa2-ratelimit": "^0.8.0",
