@@ -12,14 +12,12 @@ describe('[ GET ]:: Info', () => {
     const response = await agent.get('/info')
 
     const {
-      info: {
-        month_year_version,
-        data_source,
-        api_repository,
-        servers_endpoint,
-        remuneration_dictionary,
-        register_dictionary
-      }
+      month_year_version,
+      data_source,
+      api_repository,
+      servers_endpoint,
+      remuneration_dictionary,
+      register_dictionary
     } = response.body
 
     expect(/[0-9]{2}\-[0-9]{4}/.test(month_year_version)).toEqual(true)

@@ -5,9 +5,7 @@ describe('[ GET ]:: Categories', () => {
   it('response data should be valid', async (done) => {
     const response = await agent.get('/categories')
 
-    const {
-      results
-    } = response.body
+    const results = response.body
 
     results.map(el => {
       expect(el).toMatchObject(
