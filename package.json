@@ -13,6 +13,7 @@
     "api:test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "dependencies": {
+    "@koa/cors": "2",
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
     "koa-helmet": "^4.1.0",
