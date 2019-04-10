@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![travis](https://travis-ci.org/AkatsukiJS/opacity-project-api.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/AkatsukiJS/opacity-project-api/badge.svg?branch=feature-improvements)](https://coveralls.io/github/AkatsukiJS/opacity-project-api?branch=feature-improvements)
+[![Build Status](https://travis-ci.org/AkatsukiJS/opacity-project-api.svg?branch=master)](https://travis-ci.org/AkatsukiJS/opacity-project-api)
+[![Coverage Status](https://coveralls.io/repos/github/AkatsukiJS/opacity-project-api/badge.svg?branch=master)](https://coveralls.io/github/AkatsukiJS/opacity-project-api?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
