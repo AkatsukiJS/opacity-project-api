@@ -79,7 +79,7 @@ The output files generated use data from tables of "Cadastro" and "Remuneração
 | --  | --     | -----      |
 | `/`  |  `GET` |  `"hello friend"` |
 | `/categories` |  `GET` | List of categories: <br> `[{key, label, count}]` |
-| `/category` |  `GET` | List of servers in according with the params (see below in `/category`) |
+| `/category` |  `GET` | `{results, has_more_pages, offset, category }` (see below the parameters of `/category`) |
 | `/info` |  `GET` | `{ month_year_version, remuneration_dictionary, register_dictionary, data_source, api_repository, servers_endpoint }` |
 
 #### `/category` parameters details
@@ -246,7 +246,16 @@ order_by=DESC" localhost:3001/category
   "offset": 10
 }
 ```
+
+> `results` is a list of servers in according with params of query
+
 > Server is as the model example shown above in **Server Object Model**
+
+> `has_more_pages` indicates if has more pages
+
+> `offset` is the next offset to be utilized
+
+> `category`is the current category
 
 #### /info [GET]
 
