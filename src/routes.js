@@ -5,7 +5,7 @@ const loki = require('lokijs');
 const dbloki = new loki('data.db');
 const db = require('../db')(dbloki);
 
-db.fill();
+db.seed();
 
 router.get('/', async (ctx) => {
   ctx.body = "Hello friend";
