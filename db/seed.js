@@ -1,4 +1,4 @@
-function fill(dbloki){
+function seed(dbloki){
     const data_servers = require('../output/servers.json');
     const data_categories = require('../output/categories.json');
 
@@ -14,7 +14,7 @@ function fill(dbloki){
     servers.insert(data_servers);
     categories.insert(data_categories);
 
-    console.log('Finish fill in db');
+    console.log('Seed in db');
 }
 
-module.exports = fill;
+module.exports = seed;

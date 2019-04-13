@@ -11,4 +11,4 @@ cache: yarn
 
 install: yarn
 
-script: yarn api:test
+script: yarn api:test:coverage
