@@ -58,7 +58,7 @@ describe('[ GET ]:: Category', () => {
     })
     toBeValidCategoryResponse(response.body, {
       category_label: 'PROFESSOR DO MAGISTERIO SUPERIOR',
-      offset_value: 0,
+      offset_value: 5,
       result_length_value: 5,
       sorted_by_attr_path: 'cadastro.NOME',
       ordered_by: 'ASC'
@@ -76,7 +76,7 @@ describe('[ GET ]:: Category', () => {
     })
     toBeValidCategoryResponse(response.body, {
       category_label: 'PROFESSOR DO MAGISTERIO SUPERIOR',
-      offset_value: 2,
+      offset_value: 6,
       result_length_value: 4,
       sorted_by_attr_path: 'cadastro.NOME',
       ordered_by: 'DESC'
@@ -94,7 +94,7 @@ describe('[ GET ]:: Category', () => {
     })
     toBeValidCategoryResponse(response.body, {
       category_label: 'ASSISTENTE EM ADMINISTRACAO',
-      offset_value: 1,
+      offset_value: 4,
       result_length_value: 3,
       sorted_by_attr_path: ['remuneracao','REMUNERAÇÃO BÁSICA BRUTA (R$)'],
       ordered_by: 'DESC'
@@ -112,7 +112,7 @@ describe('[ GET ]:: Category', () => {
     })
     toBeValidCategoryResponse(response.body, {
       category_label: 'ASSISTENTE EM ADMINISTRACAO',
-      offset_value: 0,
+      offset_value: 3,
       result_length_value: 3,
       sorted_by_attr_path: ['remuneracao','REMUNERAÇÃO BÁSICA BRUTA (R$)'],
       ordered_by: 'ASC'
@@ -130,7 +130,7 @@ describe('[ GET ]:: Category', () => {
     })
     toBeValidCategoryResponse(response.body, {
       category_label: 'TECNICO DE LABORATORIO AREA',
-      offset_value: 1,
+      offset_value: 5,
       result_length_value: 4,
       sorted_by_attr_path: ['remuneracao','REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)'],
       ordered_by: 'DESC'
@@ -148,7 +148,7 @@ describe('[ GET ]:: Category', () => {
     })
     toBeValidCategoryResponse(response.body, {
       category_label: 'TECNICO DE LABORATORIO AREA',
-      offset_value: 0,
+      offset_value: 4,
       result_length_value: 4,
       sorted_by_attr_path: ['remuneracao','REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)'],
       ordered_by: 'ASC'

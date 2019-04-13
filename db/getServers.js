@@ -69,13 +69,13 @@ function getPage({
 
     const base = _offset;
 		const rawResults = list_ord.data({ removeMeta: true })
-		const results = rawResults.slice(base, base + _limit)
-
+    const target = base + _limit
+		const results = rawResults.slice(base, target)
     return {
       results,
-      has_more_pages: rawResults.length === base + _limit,
+      has_more_pages: (target - 1) < rawResults.length,
       category: categoryFound.label,
-      offset: _offset
+      offset: Math.min(target, rawResults.length)
     }
     // results, category, has_more_pages, offset
 }
