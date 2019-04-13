@@ -5,17 +5,41 @@
   "author": "akatsukijs",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "api:dev": "node -r dotenv/config index.js",
-    "api:start": "node index.js",
-    "generate": "node utils/generator"
+    "api:dev": "node -r dotenv/config src/index.js",
+    "api:start": "node src/index.js",
+    "generate": "node utils/generator",
+    "api:test": "jest",
+    "api:test:watch": "jest --watch",
+    "api:test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "dependencies": {
+    "@koa/cors": "2",
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.1.0",
+    "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "koa2-ratelimit": "^0.8.0",
     "lokijs": "^1.5.5"
   },
   "devDependencies": {
-    "dotenv": "^6.2.0"
+    "coveralls": "^3.0.3",
+    "dotenv": "^6.2.0",
+    "jest": "^24.1.0",
+    "supertest": "^3.4.2"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!output/**",
+      "!utils/**",
+      "!**/coverage/**"
+    ],
+    "reporters": [
+      "default",
+      "./utils/reporterJest.js"
+    ]
   }
 }

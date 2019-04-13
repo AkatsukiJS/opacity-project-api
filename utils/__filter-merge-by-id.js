@@ -50,7 +50,7 @@ function filter_merge_by_id(OBJECT_REGISTERS, FILE, TYPE_RETURN){
             const cadastro = OBJECT_REGISTERS[id_portal];
             delete cadastro['Id_SERVIDOR_PORTAL'];
 
-            obj = {'Id_SERVIDOR_PORTAL': id_portal, cadastro, remuneracao: obj};
+            obj = {'id': id_portal, cadastro, remuneracao: obj};
 
             if(TYPE == 'OBJECT'){
               object_all_servers[id_portal] = obj;

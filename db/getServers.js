@@ -18,43 +18,66 @@ const sort_by_rliquid_decres = sort_by_rliquid(-1, 1);
 const sort_by_rbrute_cres = sort_by_rbrute(1, -1);
 const sort_by_rbrute_decres = sort_by_rbrute(-1, 1);
 
-function getPage({DB: dbloki, category, from=0, order}){
+function getPage({
+  DB: dbloki,
+  offset,
+  limit,
+  category,
+  sort_by,
+  order_by
+}){
+    const _offset = parseInt(offset) || 0
+    const _limit = parseInt(limit) || 10
+    const _category = category || ''
+    const _sort_by = sort_by || 'NAME'
+    const _order_by = order_by || 'ASC'
 
+    const categories = dbloki.getCollection('categories');
+    const categoryFound = categories.findOne({ "key": category })
+    if(!categoryFound) throw new Error("Wrong category")
     const servers = dbloki.getCollection('servers');
-    const list = servers.chain().find({ "cadastro.DESCRICAO_CARGO": category });
+    const list = servers.chain().find({ "cadastro.DESCRICAO_CARGO": categoryFound.label });
 
     let list_ord = list;
 
-    if(order){
-      switch(order.by){
+    if(_sort_by){
+      switch(_sort_by){
         case 'NAME':
-          list_ord = order.descending === true
+          list_ord = _order_by === 'DESC'
           ? list.sort(sort_by_name_decres)
           : list.sort(sort_by_name_cres);
           break;
 
-        case 'R_BRUTE':  
-          list_ord = order.descending === true
+        case 'R_BRUTE':
+          list_ord = _order_by === 'DESC'
           ? list.sort(sort_by_rbrute_decres)
           : list.sort(sort_by_rbrute_cres);
           break;
 
-        case 'R_LIQUID': 
-          list_ord = order.descending === true
+        case 'R_LIQUID':
+          list_ord = _order_by === 'DESC'
           ? list.sort(sort_by_rliquid_decres)
           : list.sort(sort_by_rliquid_cres);
           break;
 
         default:
-          list_ord = order.descending === true
+          list_ord = _order_by === 'DESC'
           ? list.sort(sort_by_name_decres)
           : list.sort(sort_by_name_cres);
       }
     }
 
-    const base = isNaN(from) ? 0 : from < 0 ? 0 : from;
-
-    return list_ord.data({ removeMeta: true }).slice(base, base + 10);
+    const base = _offset;
+		const rawResults = list_ord.data({ removeMeta: true })
+    const target = base + _limit
+		const results = rawResults.slice(base, target)
+    return {
+      results,
+      has_more_pages: (target - 1) < rawResults.length,
+      category: categoryFound.label,
+      offset: Math.min(target, rawResults.length)
+    }
+    // results, category, has_more_pages, offset
 }
 
 module.exports = getPage;
