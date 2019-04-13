@@ -29,11 +29,9 @@ In this project was utilized [Koajs2](https://koajs.com/), [LokiJS](http://lokij
 > Generate the JSON files required for the API
 
 
-## API :rocket:
+## Data requirement
 
-### Data requirement
-
-#### Generate output data :wrench:
+### Generate output data :wrench:
 
 As a example, unpack the `data/20180131_data.tar.xz` for testing the tables of 01/2018 obtained in link above.
 
@@ -47,7 +45,7 @@ yarn generate
 
 > The API Depends on of files `data/20180131_Cadastro.csv` and `data/20180131_Remuneracao.csv`
 
-#### Output
+### Output
 
 The output files generated use data from tables of "Cadastro" and "Remuneração" from servers filtered by a ID of the Organization UFPI (26279):
 
@@ -66,7 +64,7 @@ The output files generated use data from tables of "Cadastro" and "Remuneração
 │   ├── 20180131_Remuneracao.csv
 │   └── source
 ├── db
-│   ├── fillDB.js
+│   ├── seed.js
 │   ├── getCategories.js
 │   ├── getServers.js
 │   └── index.js
@@ -83,9 +81,9 @@ The output files generated use data from tables of "Cadastro" and "Remuneração
 │   └── routes.js
 ```
 
-### Endpoints
+## Endpoints
 
-#### / [GET]
+### / [GET]
 > Hello friend
 
 **Request**
@@ -111,7 +109,7 @@ curl -X GET localhost:3001/
     Hello friend
     ```
 
-#### /info [GET]
+### /info [GET]
 
 > Information about utilized data in API
 
@@ -153,7 +151,7 @@ curl -X GET localhost:3001/info
     }
     ```
 
-#### /categories [GET]
+### /categories [GET]
 > List of all categories
 
 **Request**
@@ -211,7 +209,7 @@ curl -X GET localhost:3001/categories
     ]
     ```
 
-#### /category [GET]
+### /category [GET]
 >  List of servers in according with params of query
 
 **Request**
